@@ -165,3 +165,24 @@
 @mixin flex-space-around-stretch($direction: row, $wrap: nowrap) {
 	@include flex-container($direction, $wrap, space-around, stretch);
 }
+// usage
+
+// .container {
+// 	@include flex-container(row, wrap, space-between, center);
+// }
+
+// .item {
+// 	@include flex-item(2);
+// }
+
+// .centered {
+// 	@include flex-center(column);
+// }
+
+// .row {
+// 	@include flex-row(wrap);
+// }
+
+// .column {
+// 	@include flex-column();
+// }
