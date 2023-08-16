@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -41,11 +41,6 @@ function Homepage() {
 		const passwordRegex =
 			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 		return passwordRegex.test(password);
-	};
-	const [isChecked, setIsChecked] = useState(false);
-
-	const handleCheckboxChange = () => {
-		setIsChecked(!isChecked);
 	};
 	// @end of login box
 	return (

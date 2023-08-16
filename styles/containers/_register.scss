@@ -1,0 +1,222 @@
+$primaryColor: #4c8bf5;
+$secondaryColor: #ff6b6b;
+$cardBackgroundColor: rgba(255, 255, 255, 0.15);
+$headingTextColor: #ffffff;
+$inputBackgroundColor: rgba(255, 255, 255, 0.2);
+$inputTextColor: #ffffff;
+$placeholderColor: #ffffffaa;
+
+.registrationForm {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	backdrop-filter: blur(20px);
+	padding: 30px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 70%;
+	max-width: 400px;
+	height: 100%;
+	max-height: 500px;
+	z-index: 20;
+	text-align: center;
+	@media (max-width: #{$breakpoint-phone}) {
+		max-height: 410px;
+	}
+	h2 {
+		margin-bottom: 15%;
+		font-size: var(--font-10);
+		font-family: var(--font-roboto);
+		font-weight: 400;
+		letter-spacing: 2px;
+		position: relative;
+		cursor: pointer;
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: -10%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 33.25%;
+			height: 3.39%;
+			background: linear-gradient(135deg, $primaryColor, $secondaryColor);
+			border-radius: 10px;
+		}
+
+		.emoji {
+			display: inline-block;
+			margin-left: 0;
+			font-size: var(--font-size-2);
+			// line-height: 1;
+		}
+	}
+	.choose-college-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-left: 13%;
+		.icon-container {
+			font-size: var(--font-11);
+			color: white;
+			margin-right: 3%;
+		}
+		.choose-your-college {
+			font-size: var(--font-12);
+			font-family: var(--font-roboto);
+			font-weight: 400;
+			letter-spacing: 2px;
+		}
+	}
+
+	select {
+		width: 100%;
+		max-width: 280px;
+		height: 100%;
+		max-height: 50px;
+		padding: 12px;
+		border-radius: 10px;
+		color: #000000;
+		font-family: var(--font-roboto);
+		font-weight: 500;
+		letter-spacing: 1.5px;
+		font-size: var(--font-13);
+		background: rgba(255, 255, 255, 0.2);
+		backdrop-filter: blur(5px);
+		&:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+		&:focus {
+			box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.4);
+		}
+		margin-bottom: 1.8vh;
+	}
+
+	input {
+		width: 100%;
+		max-width: 280px;
+		height: 100%;
+		max-height: 50px;
+		padding: 15px;
+		margin-bottom: 10px;
+		border: none;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(5px);
+		color: #fff;
+		outline: none;
+		font-weight: 600;
+		font-family: var(--font-roboto);
+		letter-spacing: 1.5px;
+		font-size: var(--font-13);
+		background: rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		transition: background-color 0.3s, border-color 0.3s;
+		position: relative;
+		&::placeholder {
+			color: $placeholderColor;
+		}
+
+		&:focus {
+			background: rgba(255, 255, 255, 0.3);
+			box-shadow: 0px 0px 4.65% rgba(255, 255, 255, 0.2);
+
+			&::placeholder {
+				color: transparent;
+			}
+		}
+		&::before {
+			left: 0;
+			bottom: 0;
+		}
+
+		&::after {
+			right: 0;
+			bottom: 0;
+		}
+
+		&:hover::before,
+		&:focus::before,
+		&:hover::after,
+		&:focus::after {
+			width: 50%;
+			opacity: 1;
+		}
+
+		&:hover,
+		&:focus {
+			background: rgba(255, 255, 255, 0.3);
+			border-color: rgba(255, 255, 255, 0.6);
+		}
+		margin-bottom: 1.8vh;
+	}
+	.register-button-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		button {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			max-width: 280px;
+			padding: 15px;
+			border: none;
+			border-radius: 10px;
+			background: linear-gradient(135deg, $primaryColor, $secondaryColor);
+			color: #fff;
+			cursor: pointer;
+			font-weight: 400;
+			font-family: var(--font-roboto);
+			letter-spacing: 1.5px;
+			font-size: var(--font-13);
+			transition: background 0.3s;
+
+			&:hover {
+				background: linear-gradient(
+					135deg,
+					darken($primaryColor, 10%),
+					darken($secondaryColor, 10%)
+				);
+				transform: translateY(-2px);
+			}
+			&:active {
+				transform: translateY(2px);
+			}
+		}
+	}
+
+	.goto-login {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		h3 {
+			width: 100%;
+			max-width: 270px;
+			height: 100%;
+			max-height: 25px;
+			margin-top: 5%;
+			font-family: var(--font-roboto);
+			font-size: var(--font-12);
+			color: white;
+
+			span {
+				width: 100%;
+				max-width: 270px;
+				height: 100%;
+				max-height: 25px;
+				display: inline-block;
+				font-family: var(--font-roboto);
+				font-size: var(--font-13);
+				background: linear-gradient(45deg, #00aaff, #ff00aa);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
