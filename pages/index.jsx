@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -6,18 +6,19 @@ import { LandingLayout } from "@/layout";
 import { LandingNavbar } from "@/containers";
 import { TypingText } from "@/components";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 function Homepage() {
-	const handleLogin = () => {
-		const userIdInput = document.querySelector(".user-id-input");
-		const passwordInput = document.querySelector(".password-input");
-		const userId = userIdInput.value;
-		const password = passwordInput.value;
-		//@ login box content starts from here
+	const router = useRouter();
+	const [userId, setUserId] = useState("");
+	const [password, setPassword] = useState("");
+
+	function handleLogin() {
 		if (!isPasswordValid(password)) {
 			alert(
 				"Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one special character."
 			);
-			passwordInput.value = "";
+			setPassword("");
 		} else {
 			fetch(`https://universa-api-gateway.onrender.com/account/login`, {
 				method: "POST",
@@ -29,20 +30,32 @@ function Homepage() {
 					password: password,
 				}),
 			})
-				.then((response) => response.json())
-				.then((res) => {
-					console.log(res);
+				.then(function (response) {
+					if (response.ok) {
+						return response.json();
+					} else {
+						throw new Error(response.statusText);
+					}
+				})
+				.then(function (data) {
+					if (data.status === true && data.data.type === "applicant") {
+						router.push("/applicant");
+					} else {
+						// Handle other cases if needed
+					}
+				})
+				.catch(function (error) {
+					console.error("Error logging in:", error);
 				});
-			alert(`Logged in with UserId: ${userId}`);
 		}
-	};
+	}
 
-	const isPasswordValid = (password) => {
+	function isPasswordValid(password) {
 		const passwordRegex =
 			/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 		return passwordRegex.test(password);
-	};
-	// @end of login box
+	}
+
 	return (
 		<Fragment>
 			<LandingNavbar></LandingNavbar>
@@ -58,7 +71,6 @@ function Homepage() {
 						</div>
 					</div>
 					<div className="homepage-right">
-						{/* Login box content starts from here*/}
 						<div className="glassmorphism-login-box">
 							<h1 className="loginbox-heading">
 								Step Inside your Academic Realm
@@ -74,6 +86,8 @@ function Homepage() {
 									type="text"
 									placeholder="UserId"
 									className="input-field user-id-input"
+									value={userId}
+									onChange={(e) => setUserId(e.target.value)}
 								/>
 							</div>
 							<div className="input-icon-container-password">
@@ -84,6 +98,8 @@ function Homepage() {
 									type="password"
 									placeholder="Password"
 									className="input-field password-input"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
 								/>
 							</div>
 							<div className="check-box-container">
