@@ -16,6 +16,11 @@ function Homepage() {
 	const handleCollegeChange = (e) => {
 		setSelectedCollege(e.target.value);
 	};
+	function isEmailValid(email) {
+		// Use a regular expression to validate the email format
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		return emailRegex.test(email);
+	}
 
 	const handleRegistration = () => {
 		if (!isEmailValid(email)) {
