@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-const Navbar = () => {
+const LandingNavbar = () => {
 	const [showMenu, setShowMenu] = useState(false);
 	const toggleMenu = () => {
 		setShowMenu(!showMenu);
@@ -118,4 +118,4 @@ const Navbar = () => {
 	);
 };
 
-export default Navbar;
+export default LandingNavbar;
