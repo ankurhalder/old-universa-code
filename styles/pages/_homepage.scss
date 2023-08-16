@@ -1,0 +1,350 @@
+.homepage {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	color: white;
+	background: linear-gradient(-90deg, var(--violet), var(--blue));
+	background-repeat: no-repeat;
+	background-size: cover;
+	@media (max-width: #{$breakpoint-phone}) {
+		grid-template-columns: 1fr;
+	}
+	&-left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left: 40px;
+		z-index: 5;
+		margin-bottom: 50px;
+
+		.company-name {
+			font-family: var(--font-oswald);
+			font-weight: 700;
+			font-size: var(--font-5);
+			margin-bottom: 20px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+		}
+		.company-slogan {
+			font-family: var(--font-roboto);
+			font-size: var(--font-7);
+			text-transform: uppercase;
+			background: linear-gradient(to right, gray, white);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+		}
+
+		.typingEffect {
+			h1 {
+				font-family: var(--font-oswald);
+				font-weight: 400;
+				font-size: var(--font-10);
+				letter-spacing: 3px;
+				margin-bottom: 20px;
+				margin-top: 20px;
+				background: linear-gradient(to right, white, black);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+			h3 {
+				font-family: var(--font-oswald);
+				font-weight: 300;
+				font-size: var(--font-10);
+				letter-spacing: 3px;
+				background: linear-gradient(to right, white, black);
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+		}
+		@media (max-width: #{$breakpoint-phone}) {
+			display: none;
+		}
+	}
+	//@ login box
+	&-right {
+		height: 100%;
+		width: 100%;
+		padding: 10vh 24px 24px 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.glassmorphism-login-box {
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 20px;
+			backdrop-filter: blur(20px);
+			padding: 30px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			width: 70%;
+			max-width: 400px;
+			height: 100%;
+			max-height: 500px;
+			z-index: 20;
+			text-align: center;
+			@media (max-width: #{$breakpoint-phone}) {
+				max-height: 410px;
+			}
+			.loginbox-heading {
+				margin-bottom: 10%;
+				font-size: var(--font-8);
+				font-family: var(--font-roboto);
+				font-weight: 400;
+
+				letter-spacing: 2px;
+				position: relative;
+				cursor: pointer;
+
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: -10%;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 33.25%;
+					height: 3.39%;
+					background: linear-gradient(135deg, #2ecc71, #4caf50);
+					border-radius: 10px;
+				}
+
+				.emoji {
+					display: inline-block;
+					margin-left: 0;
+					font-size: var(--font-size-2);
+					line-height: 1;
+				}
+			}
+			.input-icon-container-username {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			.input-icon-container-password {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			.icon-container {
+				font-size: var(--font-11);
+				color: white;
+				margin-bottom: 10px;
+				margin-right: 10px;
+			}
+
+			.input-field {
+				width: 100%;
+				max-width: 280px;
+				height: 100%;
+				max-height: 50px;
+				padding: 15px;
+				margin-bottom: 10px;
+				border: none;
+				border-radius: 10px;
+				background: rgba(255, 255, 255, 0.3);
+				backdrop-filter: blur(5px);
+				color: #fff;
+				outline: none;
+				font-weight: 600;
+				font-family: var(--font-roboto);
+				letter-spacing: 1.5px;
+				font-size: var(--font-13);
+				background: rgba(255, 255, 255, 0.2);
+				border: 1px solid rgba(255, 255, 255, 0.4);
+				transition: background-color 0.3s, border-color 0.3s;
+				position: relative;
+				&::placeholder {
+					color: rgba(255, 255, 255, 0.6);
+				}
+
+				&:focus {
+					background: rgba(255, 255, 255, 0.3);
+					box-shadow: 0px 0px 4.65% rgba(255, 255, 255, 0.2);
+
+					&::placeholder {
+						color: transparent;
+					}
+				}
+				&::before {
+					left: 0;
+					bottom: 0;
+				}
+
+				&::after {
+					right: 0;
+					bottom: 0;
+				}
+
+				&:hover::before,
+				&:focus::before,
+				&:hover::after,
+				&:focus::after {
+					width: 50%;
+					opacity: 1;
+				}
+
+				&:hover,
+				&:focus {
+					background: rgba(255, 255, 255, 0.3);
+					border-color: rgba(255, 255, 255, 0.6);
+				}
+			}
+
+			.check-box-container {
+				.remember-me-checkbox {
+					margin-right: 10px;
+					width: 15px;
+					height: 15px;
+					border: 2px solid rgba(255, 255, 255, 0.5);
+					border-radius: 5px;
+					transition: border-color 0.3s ease;
+					@media (max-width: #{$breakpoint-phone}) {
+						width: 12px;
+						height: 12px;
+					}
+				}
+
+				.remember-me-label {
+					color: white;
+					cursor: pointer;
+					font-family: var(--font-roboto);
+					font-size: var(--font-11);
+					@media (max-width: #{$breakpoint-phone}) {
+						font-size: var(--font-11);
+						font-weight: 200;
+					}
+				}
+			}
+
+			.login-button-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.login-button {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 100%;
+					max-width: 280px;
+					padding: 15px;
+					margin-top: 10px;
+					border: none;
+					border-radius: 10px;
+					background: linear-gradient(to right, #4caf50, #2ecc71);
+					color: #fff;
+					cursor: pointer;
+					font-weight: 400;
+					font-family: var(--font-roboto);
+					letter-spacing: 1.5px;
+					font-size: var(--font-13);
+					transition: background 0.3s;
+					&:hover {
+						background: linear-gradient(
+							135deg,
+							darken(#2ecc71, 10%),
+							darken(#4caf50, 10%)
+						);
+						transform: translateY(-2px);
+					}
+					&:active {
+						transform: translateY(2px);
+					}
+				}
+			}
+
+			.social-login {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 20px 0 20px 0;
+				p {
+					font-weight: 400;
+					font-family: var(--font-roboto);
+					letter-spacing: 1.5px;
+					font-size: var(--font-13);
+				}
+				.facebook,
+				.google {
+					font-size: 24px;
+					margin: 0 0 0 30px;
+					color: rgb(77, 77, 214);
+					cursor: pointer;
+					transition: color 0.3s;
+					&:hover {
+						color: #555;
+					}
+				}
+			}
+
+			.options {
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+				color: white;
+				margin-top: 10px;
+
+				span {
+					font-weight: 400;
+					font-family: var(--font-roboto);
+					letter-spacing: 1px;
+					font-size: var(--font-15);
+					color: white;
+					text-decoration: none;
+					transition: color 0.3s;
+					.chick-to-register {
+						&:hover {
+							font-weight: 800;
+							// background: linear-gradient(to right, $deepGreen, $lightGreen);
+							// -webkit-background-clip: text;
+							// background-clip: text;
+							// color: transparent;
+							text-decoration: underline;
+						}
+					}
+				}
+				.forget-password {
+					&:hover {
+						color: red;
+					}
+				}
+			}
+		}
+	}
+	//@ login box end
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		background: var(--deepblue);
+		opacity: 0.2;
+		@media (max-width: #{$breakpoint-phone}) {
+			opacity: 0.3;
+		}
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+		background-image: url(/landingpage/spiral.png);
+		background-repeat: no-repeat;
+		background-position-y: center;
+		background-size: 100%;
+		opacity: 0.8;
+		@media (max-width: #{$breakpoint-tablet}) {
+			transform: rotate(0deg) translateX(0px) translateY(0px);
+		}
+	}
+}
