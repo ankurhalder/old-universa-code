@@ -22,9 +22,9 @@ const LandingNavbar = () => {
 					<ul className="header-sub-menu">
 						<li>
 							<span
-								className={activePage === "/about-us" ? "active" : "notactive"}
+								className={activePage === "/aboutus" ? "active" : "notactive"}
 							>
-								<Link href="/about-us">About Us</Link>
+								<Link href="/aboutus">About Us</Link>
 							</span>
 						</li>
 						<li>
@@ -37,11 +37,9 @@ const LandingNavbar = () => {
 
 						<li>
 							<span
-								className={
-									activePage === "/contact-us" ? "active" : "notactive"
-								}
+								className={activePage === "/contactus" ? "active" : "notactive"}
 							>
-								<Link href="/contact-us">Contact Us</Link>
+								<Link href="/contactus">Contact Us</Link>
 							</span>
 						</li>
 						<li>
@@ -82,9 +80,9 @@ const LandingNavbar = () => {
 						</li>
 						<li>
 							<span
-								className={activePage === "/about-us" ? "active" : "notactive"}
+								className={activePage === "/aboutus" ? "active" : "notactive"}
 							>
-								<Link href="/about-us">About Us</Link>
+								<Link href="/aboutus">About Us</Link>
 							</span>
 						</li>
 						<li>
@@ -97,11 +95,9 @@ const LandingNavbar = () => {
 
 						<li>
 							<span
-								className={
-									activePage === "/contact-us" ? "active" : "notactive"
-								}
+								className={activePage === "/contactus" ? "active" : "notactive"}
 							>
-								<Link href="/contact-us">Contact Us</Link>
+								<Link href="/contactus">Contact Us</Link>
 							</span>
 						</li>
 						<li>
