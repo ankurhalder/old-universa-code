@@ -4,7 +4,6 @@ function ApplicantDashboard() {
 	return (
 		<Fragment>
 			<ApplicantLayout></ApplicantLayout>
-			<div>hi</div>
 		</Fragment>
 	);
 }
