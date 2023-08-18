@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-
+import { ThemeToogle } from "@/components";
 const Navbar = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,6 +19,9 @@ const Navbar = () => {
 		<div className="navbar">
 			<div className="logo">
 				<Link href="/">Universa</Link>
+			</div>
+			<div className="theme-toogle-container">
+				<ThemeToogle></ThemeToogle>
 			</div>
 			<div className="menuButton" onClick={toggleMenu}>
 				<FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
