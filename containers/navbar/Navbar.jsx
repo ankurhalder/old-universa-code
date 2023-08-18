@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,21 +10,51 @@ const Navbar = () => {
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
 	};
-
+	const router = useRouter();
+	const [activePage, setActivePage] = useState(router.pathname);
+	useEffect(() => {
+		setActivePage(router.pathname);
+	}, [router.pathname]);
 	return (
 		<div className="navbar">
-			<div className="logo">Your Logo</div>
+			<div className="logo">
+				<Link href="/">Universa</Link>
+			</div>
 			<div className="menuButton" onClick={toggleMenu}>
-				{/* Use the FontAwesomeIcon component */}
 				<FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
 			</div>
 			{menuOpen && (
 				<div className="menuPanel">
 					<ul className="subMenu">
-						<li>Sub-Item 1</li>
-						<li>Sub-Item 2</li>
-						<li>Sub-Item 3</li>
-						{/* Add more sub-items as needed */}
+						<li>
+							<span
+								className={activePage === "/aboutus" ? "active" : "notactive"}
+							>
+								<Link href="/aboutus">About Us</Link>
+							</span>
+						</li>
+						<li>
+							<span
+								className={activePage === "/services" ? "active" : "notactive"}
+							>
+								<Link href="/services">Services</Link>
+							</span>
+						</li>
+
+						<li>
+							<span
+								className={activePage === "/contactus" ? "active" : "notactive"}
+							>
+								<Link href="/contactus">Contact Us</Link>
+							</span>
+						</li>
+						<li>
+							<span
+								className={activePage === "/register" ? "active" : "notactive"}
+							>
+								<Link href="/register">Register</Link>
+							</span>
+						</li>
 					</ul>
 				</div>
 			)}
