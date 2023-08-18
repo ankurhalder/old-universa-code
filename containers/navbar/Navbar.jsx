@@ -40,19 +40,19 @@ function Navbar() {
 				>
 					<div className="hamburger-menu-panel">
 						<ul className="header-panel-sub-menu">
-							<li key={activePage === "/" ? "home" : activePage}>
+							<li key="home">
 								<span className={activePage === "/" ? "active" : "notactive"}>
 									<Link href="/">Home</Link>
 								</span>
 							</li>
-							<li key={activePage === "/aboutus" ? "about" : activePage}>
+							<li key="about">
 								<span
 									className={activePage === "/aboutus" ? "active" : "notactive"}
 								>
 									<Link href="/aboutus">About Us</Link>
 								</span>
 							</li>
-							<li key={activePage === "/services" ? "services" : activePage}>
+							<li key="services">
 								<span
 									className={
 										activePage === "/services" ? "active" : "notactive"
@@ -61,7 +61,7 @@ function Navbar() {
 									<Link href="/services">Services</Link>
 								</span>
 							</li>
-							<li key={activePage === "/contactus" ? "contact" : activePage}>
+							<li key="contact">
 								<span
 									className={
 										activePage === "/contactus" ? "active" : "notactive"
@@ -70,7 +70,7 @@ function Navbar() {
 									<Link href="/contactus">Contact Us</Link>
 								</span>
 							</li>
-							<li key={activePage === "/register" ? "register" : activePage}>
+							<li key="register">
 								<span
 									className={
 										activePage === "/register" ? "active" : "notactive"

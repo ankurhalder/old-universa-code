@@ -1,5 +1,12 @@
+import { ApplicantLayout } from "@/layout";
+import { Fragment } from "react";
 function ApplicantDashboard() {
-	return <div>this is applicant panel</div>;
+	return (
+		<Fragment>
+			<ApplicantLayout></ApplicantLayout>
+			<div>hi</div>
+		</Fragment>
+	);
 }
 
 export default ApplicantDashboard;
