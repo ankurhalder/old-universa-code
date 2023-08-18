@@ -3,7 +3,9 @@ import { Fragment } from "react";
 function ApplicantDashboard() {
 	return (
 		<Fragment>
-			<ApplicantLayout></ApplicantLayout>
+			<ApplicantLayout>
+				<div className="applicant-dashboard"></div>
+			</ApplicantLayout>
 		</Fragment>
 	);
 }

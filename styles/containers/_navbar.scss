@@ -1,10 +1,10 @@
 .navbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem 2rem;
-	background-color: #2d3436;
-	color: white;
+	@include flex-container(row, wrap, space-between, center);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	// padding-right: 10px;
+	background-color: var(--theme-txt);
+	// color: var(--theme-txt);
 	position: relative;
 	font-family: "Helvetica Neue", sans-serif;
 
@@ -14,12 +14,18 @@
 		margin-right: 2rem;
 
 		a {
-			color: white;
+			color: var(--theme-bg);
 			text-decoration: none;
 		}
 	}
 
+	.theme-toggle-container {
+		display: flex;
+		align-items: center;
+	}
+
 	.menuButton {
+		color: var(--theme-bg);
 		cursor: pointer;
 		display: flex;
 		align-items: center;
@@ -37,9 +43,9 @@
 
 	.menuPanel {
 		position: absolute;
-		top: 10%;
+		top: 100%;
 		right: 0;
-		background-color: black;
+		background-color: #ffffff;
 		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
 		z-index: 1;
 		padding: 1.5rem;
