@@ -50,7 +50,7 @@ function Homepage() {
 			console.log(email);
 			console.log(selectedCollege);
 			try {
-				fetch(`https://universa-api-gateway.onrender.com/account/`, {
+				fetch(`https://universa-api-gateway.onrender.com/services/account/`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
