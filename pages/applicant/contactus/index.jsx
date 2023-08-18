@@ -1,5 +1,13 @@
-function COntactUs() {
-	return <div>Coming Soon</div>;
+import { Fragment } from "react";
+import { ApplicantLayout } from "@/layout";
+function ContactUs() {
+	return (
+		<Fragment>
+			<ApplicantLayout>
+				<div>Coming Soon</div>
+			</ApplicantLayout>
+		</Fragment>
+	);
 }
 
-export default COntactUs;
+export default ContactUs;

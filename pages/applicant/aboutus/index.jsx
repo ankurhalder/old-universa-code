@@ -1,5 +1,13 @@
+import { Fragment } from "react";
+import { ApplicantLayout } from "@/layout";
 function AboutUS() {
-	return <div>Coming Soon</div>;
+	return (
+		<Fragment>
+			<ApplicantLayout>
+				<div>Coming Soon</div>
+			</ApplicantLayout>
+		</Fragment>
+	);
 }
 
 export default AboutUS;
