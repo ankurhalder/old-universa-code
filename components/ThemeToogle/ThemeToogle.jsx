@@ -19,7 +19,7 @@ function ThemeToogle() {
 		};
 	}, []);
 	return (
-		<div>
+		<div className="theme-toogle">
 			<input
 				className="toogle-theme-input"
 				type="checkbox"

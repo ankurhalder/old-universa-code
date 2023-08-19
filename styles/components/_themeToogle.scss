@@ -1,83 +1,83 @@
-$animation-duration: 0.3s;
+.theme-toogle {
+	.theme-toogle-label {
+		user-select: none;
+		width: 70.3125px;
+		height: 28.125px;
+		position: relative;
+		display: block;
+		background: #ebebeb;
+		border-radius: 28.125px;
+		box-shadow: inset 0px 1.40625px 4.21875px rgba(0, 0, 0, 0.4),
+			inset 0px -1.40625px 1.21875px rgba(255, 255, 255, 0.4);
+		cursor: pointer;
+		transition: 0.3s;
 
-.theme-toogle-label {
-	user-select: none;
-	width: 70.3125px;
-	height: 28.125px;
-	position: relative;
-	display: block;
-	background: #ebebeb;
-	border-radius: 28.125px;
-	box-shadow: inset 0px 1.40625px 4.21875px rgba(0, 0, 0, 0.4),
-		inset 0px -1.40625px 1.21875px rgba(255, 255, 255, 0.4);
-	cursor: pointer;
-	transition: $animation-duration;
+		&:after {
+			content: "";
+			width: 25.3125px;
+			height: 25.3125px;
+			position: absolute;
+			top: 1.40625px;
+			left: 1.40625px;
+			background: linear-gradient(180deg, #ffcc89, #d8860b);
+			border-radius: 25.3125px;
+			box-shadow: 0px 1.40625px 3.125px rgba(0, 0, 0, 0.2);
+			transition: 0.3s;
+		}
+	}
 
-	&:after {
-		content: "";
-		width: 25.3125px;
-		height: 25.3125px;
+	.toogle-theme-input {
+		width: 0;
+		height: 0;
+		visibility: hidden;
+	}
+
+	.toogle-theme-input:checked + .theme-toogle-label {
+		background: #242424;
+
+		&:after {
+			left: 69.609375px;
+			transform: translateX(-100%);
+			background: linear-gradient(180deg, #777, #3a3a3a);
+		}
+
+		&:active:after {
+			width: 37.03125px;
+		}
+	}
+
+	.theme-toogle-label .theme-image {
 		position: absolute;
-		top: 1.40625px;
-		left: 1.40625px;
-		background: linear-gradient(180deg, #ffcc89, #d8860b);
-		border-radius: 25.3125px;
-		box-shadow: 0px 1.40625px 3.125px rgba(0, 0, 0, 0.2);
-		transition: $animation-duration;
-	}
-}
-
-.toogle-theme-input {
-	width: 0;
-	height: 0;
-	visibility: hidden;
-}
-
-.toogle-theme-input:checked + .theme-toogle-label {
-	background: #242424;
-
-	&:after {
-		left: 69.609375px;
-		transform: translateX(-100%);
-		background: linear-gradient(180deg, #777, #3a3a3a);
+		width: 16.875px;
+		top: 3.5px;
+		z-index: 100;
 	}
 
-	&:active:after {
-		width: 37.03125px;
+	.sun {
+		position: relative;
+		left: 3.5px;
 	}
-}
 
-.theme-toogle-label .theme-image {
-	position: absolute;
-	width: 16.875px;
-	top: 3.5px;
-	z-index: 100;
-}
+	.moon {
+		position: relative;
+		left: 48px;
+	}
 
-.sun {
-	position: relative;
-	left: 3.5px;
-}
+	.theme-toogle-label .theme-image .sun {
+		filter: invert(1);
+		transition: 0.3s;
+	}
 
-.moon {
-	position: relative;
-	left: 48px;
-}
+	.theme-toogle-label .theme-image .moon {
+		filter: invert(0.5);
+		transition: 0.3s;
+	}
 
-.theme-toogle-label .theme-image .sun {
-	filter: invert(1);
-	transition: $animation-duration;
-}
+	.toogle-theme-input:checked + .theme-toogle-label .theme-image.sun {
+		filter: invert(0.5);
+	}
 
-.theme-toogle-label .theme-image .moon {
-	filter: invert(0.5);
-	transition: $animation-duration;
-}
-
-.toogle-theme-input:checked + .theme-toogle-label .theme-image.sun {
-	filter: invert(0.5);
-}
-
-.toogle-theme-input:checked + .theme-toogle-label .theme-image.moon {
-	filter: invert(1);
+	.toogle-theme-input:checked + .theme-toogle-label .theme-image.moon {
+		filter: invert(1);
+	}
 }

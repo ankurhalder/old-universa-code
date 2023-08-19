@@ -4,7 +4,9 @@ function ApplicantDashboard() {
 	return (
 		<Fragment>
 			<ApplicantLayout>
-				<div className="applicant-dashboard"></div>
+				<div className="applicant-dashboard">
+					<h1>This is applicant dashboard</h1>
+				</div>
 			</ApplicantLayout>
 		</Fragment>
 	);
