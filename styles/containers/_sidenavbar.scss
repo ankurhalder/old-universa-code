@@ -1,0 +1,141 @@
+.side_bar {
+	position: relative;
+	top: 0;
+	left: -100%;
+	width: 300px;
+	height: 100vh;
+	background: #ecf0f3;
+	padding: 12px;
+	box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1,
+		inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+	transition: all 0.3s ease;
+
+	.title {
+		display: flex;
+		justify-content: space-evenly;
+
+		.logo {
+			font-size: 27px;
+			font-weight: 600;
+			color: #31344b;
+		}
+	}
+
+	ul {
+		margin-top: 35px;
+		list-style: none;
+
+		a {
+			color: #31344b;
+			text-decoration: none;
+			display: block;
+			margin-top: 12px;
+			font-size: 18px;
+			font-weight: 400;
+			padding: 10px 25px;
+			border-radius: 6px;
+			box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+			position: relative;
+			transition: all 0.2s ease;
+
+			i {
+				margin-right: 10px;
+			}
+
+			&:hover:before {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+				border-radius: 6px;
+			}
+
+			&:hover {
+				color: #3498db;
+			}
+		}
+	}
+
+	.media_icons {
+		margin-top: 50px;
+		display: flex;
+		justify-content: center;
+
+		a {
+			position: relative;
+			margin: 0 4px;
+			font-size: 17px;
+			cursor: pointer;
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 40px;
+			text-decoration: none;
+			box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+			transition: all 0.3s ease;
+
+			&:hover:before {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+				border-radius: 50%;
+			}
+		}
+
+		a:nth-child(1) {
+			color: #4267b2;
+		}
+
+		a:nth-child(2) {
+			color: #1da1f2;
+		}
+
+		a:nth-child(3) {
+			color: #e1306c;
+		}
+
+		a:nth-child(4) {
+			color: #ff0000;
+		}
+	}
+}
+
+label {
+	font-size: 17px;
+	color: #31344b;
+	box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+	height: 37px;
+	width: 37px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 37px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+		color: #3498db;
+	}
+}
+
+#check {
+	display: none;
+}
+
+.bars {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+}
+
+#check:checked ~ .side_bar {
+	left: 0;
+}
