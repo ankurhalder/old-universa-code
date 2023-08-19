@@ -6,6 +6,7 @@ export const handleThemeChange = (theme) => {
 	const root = document.documentElement;
 	if (theme === "light") {
 		// Light Theme
+
 		setCSSVariable("hsla(0, 0%, 100%, 1)", `--theme-bg`, root);
 		setCSSVariable("hsla(0, 0%, 98%, 1)", `--theme-panel`, root);
 		setCSSVariable("hsla(0, 0%, 0%, 1)", `--theme-txt`, root);
@@ -32,7 +33,7 @@ export const handleThemeChange = (theme) => {
 	} else {
 		// Dark Theme
 		setCSSVariable("hsla(210, 18%, 16%, 1)", `--theme-bg`, root);
-		setCSSVariable("hsla(210, 20%, 23%, 1)", `--theme-panel`, root);
+		setCSSVariable("hsla(225, 20%, 23%, 0.1)", `--theme-panel`, root);
 		setCSSVariable("hsla(0, 0%, 100%, 1)", `--theme-txt`, root);
 		setCSSVariable("hsla(0, 0%, 0%, 1)", `--theme-txt-secondary`, root);
 		setCSSVariable("hsla(210, 100%, 50%, 1)", `--theme-accent`, root);

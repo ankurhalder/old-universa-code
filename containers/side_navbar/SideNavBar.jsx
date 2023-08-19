@@ -26,34 +26,34 @@ const SideNavBar = () => {
 				</div>
 				<ul>
 					<li>
-						<div className="side-nav-links">
-							<Link href="/applicant">Home</Link>
-						</div>
+						<Link className="side-nav-links" href="/applicant">
+							Home
+						</Link>
 					</li>
 					<li>
-						<div className="side-nav-links">
-							<Link href="/applicant/update">Update Profile</Link>
-						</div>
+						<Link className="side-nav-links" href="/applicant/update">
+							Update Profile
+						</Link>
 					</li>
 					<li>
-						<div className="side-nav-links">
-							<Link href="/applicant/aboutus">About Us</Link>
-						</div>
+						<Link className="side-nav-links" href="/applicant/aboutus">
+							About Us
+						</Link>
 					</li>
 					<li>
-						<div className="side-nav-links">
-							<Link href="/applicant/contactus">Contact Us</Link>
-						</div>
+						<Link className="side-nav-links" href="/applicant/contactus">
+							Contact Us
+						</Link>
 					</li>
 					<li>
-						<div className="side-nav-links">
-							<Link href="/applicant/services">Services</Link>
-						</div>
+						<Link className="side-nav-links" href="/applicant/services">
+							Services
+						</Link>
 					</li>
 				</ul>
-				<div className="theme-toogle-container">
+				<span className="theme-toogle-container">
 					<ThemeToogle></ThemeToogle>
-				</div>
+				</span>
 			</div>
 		</div>
 	);

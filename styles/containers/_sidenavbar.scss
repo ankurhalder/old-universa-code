@@ -1,66 +1,76 @@
 .side-navbar {
 	.side_bar {
+		@include flex-container(column, center);
 		position: absolute;
 		top: 0;
 		left: -100%;
-		width: 300px;
+		width: 100%;
+		max-width: 300px;
 		height: 100vh;
-		background: #ecf0f3;
+		background: var(--theme-panel);
+		backdrop-filter: blur(20px);
 		padding: 12px;
 		box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1,
 			inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
 		transition: all 0.3s ease;
 		z-index: 5;
 		.title {
-			display: flex;
-			justify-content: space-evenly;
-
+			@include flex-container(row, wrap, center);
 			.logo {
-				font-size: 27px;
-				font-weight: 600;
-				color: #31344b;
+				font-family: "eliantoregular";
+				font-size: var(--font-8);
+				letter-spacing: 3px;
+			}
+			.cancel {
+				margin-left: 30px;
 			}
 		}
 
 		ul {
-			margin-top: 35px;
+			margin-top: 50px;
 			list-style: none;
+			li {
+				@include flex-container(row, wrap, center);
 
-			.side-nav-links {
-				color: #31344b;
-				text-decoration: none;
-				display: block;
-				margin-top: 12px;
-				font-size: 18px;
-				font-weight: 400;
-				padding: 10px 25px;
-				border-radius: 6px;
-				box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
-				position: relative;
-				transition: all 0.2s ease;
+				.side-nav-links {
+					text-decoration: none;
+					display: block;
+					margin: 25px;
+					font-family: var(--font-roboto);
+					font-size: var(--font-12);
+					font-weight: 600;
+					letter-spacing: 2px;
+					padding: 15px 40px;
+					border-radius: 50px;
+					box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+					position: relative;
+					transition: all 0.2s ease;
 
-				// i {
-				// 	margin-right: 10px;
-				// }
+					// i {
+					// 	margin-right: 10px;
+					// }
 
-				&:hover:before {
-					position: absolute;
-					content: "";
-					top: 0;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
-					border-radius: 6px;
-				}
+					&:hover:before {
+						position: absolute;
+						content: "";
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
 
-				&:hover {
-					color: #3498db;
+						border-radius: 50px;
+					}
+
+					&:hover {
+						color: #3498db;
+					}
 				}
 			}
 		}
 		.theme-toogle-container {
-			margin-top: 150%;
+			@include flex-container(row, wrap, center);
+			margin-top: 20px;
 		}
 	}
 
