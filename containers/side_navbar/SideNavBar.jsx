@@ -52,7 +52,7 @@ const SideNavBar = () => {
 					</li>
 				</ul>
 				<div className="theme-toogle-container">
-					<ThemeToogle></ThemeToogle>{" "}
+					<ThemeToogle></ThemeToogle>
 				</div>
 			</div>
 		</div>
