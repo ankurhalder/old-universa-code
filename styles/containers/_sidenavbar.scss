@@ -8,10 +8,11 @@
 		max-width: 300px;
 		height: 100vh;
 		background: var(--theme-panel);
-		backdrop-filter: blur(20px);
+		backdrop-filter: blur(10px);
 		padding: 12px;
-		box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1,
-			inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+		box-shadow: -3px -3px 7px var(--box-shadow-1),
+			3px 3px 5px var(--box-shadow-2), inset -3px -3px 7px var(--box-shadow-1),
+			inset 3px 3px 5px var(--box-shadow-2);
 		transition: all 0.3s ease;
 		z-index: 5;
 		.title {
@@ -20,9 +21,11 @@
 				font-family: "eliantoregular";
 				font-size: var(--font-8);
 				letter-spacing: 3px;
+				color: var(--theme-txt);
 			}
 			.cancel {
 				margin-left: 30px;
+				color: var(--theme-txt);
 			}
 		}
 
@@ -40,6 +43,7 @@
 					font-size: var(--font-12);
 					font-weight: 600;
 					letter-spacing: 2px;
+					color: var(--theme-txt);
 					padding: 15px 40px;
 					border-radius: 50px;
 					box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
@@ -76,7 +80,7 @@
 
 	label {
 		font-size: 17px;
-		color: #31344b;
+		color: var(--theme-txt);
 		box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
 		height: 37px;
 		width: 37px;
