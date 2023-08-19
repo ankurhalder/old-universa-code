@@ -48,7 +48,7 @@ const SideNavBar = () => {
 	};
 
 	return (
-		<div>
+		<div className="side-navbar">
 			<input type="checkbox" id="check" />
 			<label className="button bars" htmlFor="check" onClick={toggleSidebar}>
 				{/* <FontAwesomeIcon icon={faBars} /> */}
