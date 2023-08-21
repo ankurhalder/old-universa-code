@@ -1,1 +1,52 @@
+/* Navbar.scss */
 
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #333;
+	padding: 10px 20px;
+	color: white;
+
+	&-logo {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				display: inline;
+				margin-right: 20px;
+			}
+		}
+	}
+
+	&-items {
+		list-style: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-right: 20px;
+		}
+	}
+
+	&-user-image {
+		cursor: pointer;
+	}
+
+	&-panel {
+		position: absolute;
+		top: 60px;
+		right: 20px;
+		background-color: white;
+		border: 1px solid #ccc;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* Add more styles as needed */

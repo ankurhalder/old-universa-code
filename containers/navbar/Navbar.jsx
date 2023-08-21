@@ -3,11 +3,18 @@ import Link from "next/link";
 import Image from "next/image";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { singleLogout } from "@/functions/singleLogout";
-import { multipleLogout } from "@/functions/multipleLogout";
+import { useSingleLogout } from "@/hooks/singleLogout";
+import { useMultipleLogout } from "@/hooks/multipleLogout";
 function Navbar() {
 	const [panelOpen, setPanelOpen] = useState(false);
-
+	const { singleLogout } = useSingleLogout();
+	const { multipleLogout } = useMultipleLogout();
+	const handleLogout = async () => {
+		await singleLogout();
+	};
+	const handleMultipleLogout = async () => {
+		await multipleLogout();
+	};
 	const togglePanel = () => {
 		setPanelOpen(!panelOpen);
 	};
@@ -40,8 +47,8 @@ function Navbar() {
 					<Image
 						src="/stock/doggo.jpg"
 						alt="doggo"
-						height={40}
 						width={40}
+						height={40}
 					></Image>
 				</div>
 				{panelOpen && (
@@ -53,8 +60,8 @@ function Navbar() {
 							height={40}
 							width={40}
 						></Image>
-						<button onClick={singleLogout}>Logout</button>
-						<button onClick={multipleLogout}>
+						<button onClick={handleLogout}>Logout</button>
+						<button onClick={handleMultipleLogout}>
 							Logout From Multiple devices
 						</button>
 					</div>

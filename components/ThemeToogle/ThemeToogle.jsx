@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect } from "react";
-import { handleThemeChange } from "@/functions/theme";
+import { handleThemeChange } from "@/hooks/theme";
 function ThemeToogle() {
 	useEffect(() => {
 		const checkbox = document.getElementById("darkmode-toggle");
