@@ -33,12 +33,12 @@
 			margin-top: 50px;
 			list-style: none;
 			li {
-				@include flex-container(row, wrap, center);
-
+				@include flex-container(column, center);
+				text-align: center;
 				.side-nav-links {
 					text-decoration: none;
 					display: block;
-					margin: 25px;
+					margin: 15px;
 					font-family: var(--font-roboto);
 					font-size: var(--font-12);
 					font-weight: 600;

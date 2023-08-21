@@ -10,8 +10,8 @@ import { useRouter } from "next/router";
 
 function Homepage() {
 	const router = useRouter();
-	const [userId, setUserId] = useState("");
-	const [password, setPassword] = useState("");
+	const [userId, setUserId] = useState("2023005500");
+	const [password, setPassword] = useState("Universa@2021");
 
 	function handleLogin() {
 		if (!isPasswordValid(password)) {
@@ -20,26 +20,35 @@ function Homepage() {
 			);
 			setPassword("");
 		} else {
-			fetch(`https://universa-api-gateway.onrender.com/account/login`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					user_id: userId,
-					password: password,
-				}),
-			})
+			fetch(
+				`https://universa-api-gateway.onrender.com/services/account/login`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						user_id: userId,
+						password: password,
+					}),
+				}
+			)
 				.then(function (response) {
 					if (response.ok) {
+						console.log(response);
+
 						return response.json();
 					} else {
 						throw new Error(response.statusText);
 					}
 				})
 				.then(function (data) {
+					console.log(data);
+					localStorage.setItem("applicant_login_data", data.authToken);
 					if (data.status === true && data.data.type === "applicant") {
 						router.push("/applicant");
+						const a = localStorage.getItem("applicant_login_data");
+						console.log(a);
 					} else {
 						// Handle other cases if needed
 					}
