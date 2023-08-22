@@ -23,6 +23,7 @@ export function useSingleLogout() {
 			const responseData = await response.json();
 			console.log(responseData);
 			localStorage.removeItem("applicant_login_data");
+			localStorage.removeItem("user_type");
 			router.push("/");
 		} catch (error) {
 			console.log(error);

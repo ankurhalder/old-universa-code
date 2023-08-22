@@ -46,6 +46,7 @@ function Homepage() {
 				.then(function (data) {
 					console.log(data);
 					localStorage.setItem("applicant_login_data", data.authToken);
+					localStorage.setItem("user_type", data.data.type);
 					if (data.status === true && data.data.type === "applicant") {
 						router.push("/applicant");
 						const a = localStorage.getItem("applicant_login_data");
