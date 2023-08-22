@@ -14,6 +14,7 @@ function Register() {
 		setSelectedCollege,
 		handleEmailChange,
 		handleCollegeChange,
+		loading,
 		handleRegistration,
 	} = useRegistration();
 	return (
@@ -68,7 +69,13 @@ function Register() {
 							/>
 
 							<div className="register-button-container">
-								<button onClick={handleRegistration}>Register</button>
+								<button
+									onClick={handleRegistration}
+									disabled={loading}
+									className={loading ? "loading" : ""}
+								>
+									{loading ? "Registering..." : "Register"}
+								</button>
 							</div>
 
 							<div className="goto-login">

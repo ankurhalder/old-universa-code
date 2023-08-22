@@ -181,6 +181,15 @@ $placeholderColor: #ffffffaa;
 			&:active {
 				transform: translateY(2px);
 			}
+			&.loading {
+				cursor: not-allowed;
+				background: #ccc;
+				color: #000000;
+
+				&:hover {
+					background: #ccc;
+				}
+			}
 		}
 	}
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 function useRegistration() {
 	const [email, setEmail] = useState("");
 	const [selectedCollege, setSelectedCollege] = useState("Please Select");
-
+	const [loading, setLoading] = useState(false);
 	const handleEmailChange = (e) => {
 		setEmail(e.target.value);
 	};
@@ -45,6 +45,7 @@ function useRegistration() {
 			console.log(collegeId);
 			console.log(email);
 			console.log(selectedCollege);
+			setLoading(true);
 			try {
 				const response = await fetch(
 					"https://universa-api-gateway.onrender.com/services/account/",
@@ -60,8 +61,10 @@ function useRegistration() {
 				const responseData = await response.json();
 				console.log(responseData);
 				alert("Account created successfully please verify your email to login");
+				setLoading(false);
 			} catch (error) {
 				console.log(error);
+				setLoading(false);
 			}
 		}
 	};
@@ -73,6 +76,7 @@ function useRegistration() {
 		setSelectedCollege,
 		handleEmailChange,
 		handleCollegeChange,
+		loading,
 		handleRegistration,
 	};
 }
