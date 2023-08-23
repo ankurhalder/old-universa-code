@@ -25,7 +25,7 @@ function Navbar() {
 				<div className="navbar-logo">
 					<ul>
 						<li>
-							<Link href="/applicant">Home</Link>
+							<Link href="/applicant">UNIVERSA</Link>
 						</li>
 					</ul>
 				</div>
@@ -53,7 +53,6 @@ function Navbar() {
 				</div>
 				{panelOpen && (
 					<div className="navbar-panel">
-						{/* this is user image later this will be updated dynamically so chatgpt please add edit icon on top of it */}
 						<Image
 							src="/stock/doggo.jpg"
 							alt="doggo"
