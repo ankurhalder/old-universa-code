@@ -45,10 +45,12 @@ function Navbar() {
 				</ul>
 				<div className="navbar-user-image" onClick={togglePanel}>
 					<Image
+						className="image"
 						src="/stock/doggo.jpg"
 						alt="doggo"
-						width={40}
-						height={40}
+						layout="fill"
+						// height={60}
+						// width={60}
 					></Image>
 				</div>
 				{panelOpen && (

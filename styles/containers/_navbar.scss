@@ -41,11 +41,25 @@
 		padding: 0;
 
 		li {
-			margin-right: 20px;
+			color: white;
+			text-decoration: none;
+			font-family: var(--font-roboto);
+			letter-spacing: 2px;
+			font-size: var(--font-13);
+			font-weight: 300;
+			margin-right: 40px;
 		}
 	}
 
 	&-user-image {
+		// left: 90%;
+		height: 60px;
+		width: 60px;
+		position: relative;
+		.image {
+			border: 2px solid beige;
+			border-radius: 90%;
+		}
 		cursor: pointer;
 	}
 
