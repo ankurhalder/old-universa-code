@@ -49,22 +49,29 @@ function Navbar() {
 						src="/stock/doggo.jpg"
 						alt="doggo"
 						layout="fill"
-						// height={60}
-						// width={60}
 					></Image>
 				</div>
 				{panelOpen && (
 					<div className="navbar-panel">
-						<Image
-							src="/stock/doggo.jpg"
-							alt="doggo"
-							height={40}
-							width={40}
-						></Image>
-						<button onClick={handleLogout}>Logout</button>
-						<button onClick={handleMultipleLogout}>
-							Logout From Multiple devices
-						</button>
+						<div className="user-profile">
+							<div className="navbar-panel-image">
+								<Image
+									src="/stock/doggo.jpg"
+									alt="doggo"
+									layout="fill"
+									className="image"
+								></Image>
+							</div>
+							<button className="logout-button" onClick={handleLogout}>
+								Logout
+							</button>
+							<button
+								className="logout-multiple-button"
+								onClick={handleMultipleLogout}
+							>
+								Logout From Multiple devices
+							</button>
+						</div>
 					</div>
 				)}
 			</nav>
