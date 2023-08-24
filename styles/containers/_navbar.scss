@@ -92,12 +92,20 @@
 
 			.navbar-panel-image {
 				position: relative;
-				height: 50px;
-				width: 50px;
-
-				.image {
-					border: 2px solid gray;
-					border-radius: 50%;
+				.user-image {
+					height: 70px;
+					width: 70px;
+					.user {
+						border: 1px solid black;
+						border-radius: 50%;
+					}
+				}
+				.upload-icon {
+					position: absolute;
+					height: 25px;
+					width: 25px;
+					top: 70%;
+					left: 70%;
 				}
 			}
 			// .theme-toogle-container {

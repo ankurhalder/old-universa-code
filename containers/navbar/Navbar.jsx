@@ -66,18 +66,21 @@ function Navbar() {
 					<div className="navbar-panel">
 						<div className="user-profile">
 							<div className="navbar-panel-image">
-								<Image
-									src="/stock/doggo.jpg"
-									alt="doggo"
-									layout="fill"
-									className="image"
-								></Image>
-								<Image
-									src="/navbar/upload-solid.svg"
-									alt="doggo"
-									layout="fill"
-									className="upload-icon"
-								></Image>
+								<div className="user-image">
+									<Image
+										src="/stock/doggo.jpg"
+										alt="doggo"
+										layout="fill"
+										className="user"
+									></Image>
+								</div>
+								<div className="upload-icon">
+									<Image
+										src="/navbar/upload-solid.svg"
+										alt="doggo"
+										layout="fill"
+									></Image>
+								</div>
 							</div>
 							<div className="theme-toogle-container">
 								<ThemeToogle></ThemeToogle>
