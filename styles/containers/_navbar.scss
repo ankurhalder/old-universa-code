@@ -77,18 +77,15 @@
 
 	&-panel {
 		position: absolute;
-		top: 100%;
+		top: 120%;
 		right: 1%;
-		background-color: #ffffff;
 		border: 1px solid #ccc;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		padding: 15px;
+		background-color: #f0f0f0;
+		box-shadow: 4px 4px 10px rgba(163, 177, 198, 0.6),
+			-4px -4px 10px rgba(255, 255, 255, 0.5);
+		border-radius: 10px;
 		&.light-theme {
-			background-color: #f0f0f0;
-			box-shadow: 4px 4px 10px rgba(163, 177, 198, 0.6),
-				-4px -4px 10px rgba(255, 255, 255, 0.5);
-			border-radius: 10px;
-
 			&::before,
 			&::after {
 				content: "";
@@ -168,6 +165,12 @@
 				font-weight: 400;
 				&:hover {
 					background-color: #2980b9;
+					transform: scale(0.98);
+					box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+				}
+				&:active {
+					transform: scale(0.95);
+					box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 				}
 			}
 
