@@ -107,7 +107,7 @@ function Navbar() {
 								className="logout-multiple-button"
 								onClick={handleMultipleLogout}
 							>
-								Logout From Multiple devices
+								Logout From All devices
 							</button>
 							<span className="change-password">Change password</span>
 						</div>

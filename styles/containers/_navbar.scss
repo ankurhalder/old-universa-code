@@ -51,6 +51,7 @@
 			&:hover {
 				color: #f39c12;
 				text-decoration: underline;
+				font-weight: 500;
 			}
 		}
 	}
@@ -137,10 +138,10 @@
 				}
 				.upload-icon {
 					position: absolute;
-					height: 25px;
-					width: 25px;
-					top: 70%;
-					left: 70%;
+					height: 15px;
+					width: 15px;
+					top: 80%;
+					left: 75%;
 				}
 			}
 			.theme-toogle-container {
@@ -152,7 +153,7 @@
 				height: 100%;
 				max-height: 50px;
 				max-width: 200px;
-				background-color: #3498db;
+				background-color: red;
 				color: white;
 				border: none;
 				padding: 10px 15px;
@@ -164,7 +165,8 @@
 				letter-spacing: 1px;
 				font-weight: 400;
 				&:hover {
-					background-color: #2980b9;
+					background-color: darken($color: red, $amount: 10%);
+
 					transform: scale(0.98);
 					box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 				}
@@ -175,10 +177,10 @@
 			}
 
 			.logout-button {
-				background-color: #e74c3c;
+				background-color: rgb(255, 94, 35);
 
 				&:hover {
-					background-color: #c0392b;
+					background-color: darken($color: orangered, $amount: 10%);
 				}
 			}
 			.change-password {
@@ -188,6 +190,7 @@
 				font-size: var(--font-13);
 				letter-spacing: 2px;
 				font-weight: 500;
+				cursor: pointer;
 				&:hover {
 					color: #c0392b;
 				}
