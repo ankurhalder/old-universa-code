@@ -74,6 +74,7 @@ function Navbar() {
 							>
 								Logout From Multiple devices
 							</button>
+							<span className="change-password">Change password</span>
 						</div>
 					</div>
 				)}
