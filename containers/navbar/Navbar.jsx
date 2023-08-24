@@ -4,19 +4,25 @@ import Image from "next/image";
 import { useSingleLogout } from "@/hooks/singleLogout";
 import { useMultipleLogout } from "@/hooks/multipleLogout";
 import { ThemeToogle } from "@/components";
+
 function Navbar() {
 	const [panelOpen, setPanelOpen] = useState(false);
+	const [uploadedImage, setUploadedImage] = useState("/stock/doggo.jpg"); // Default image
 	const { singleLogout } = useSingleLogout();
 	const { multipleLogout } = useMultipleLogout();
+
 	const handleLogout = async () => {
 		await singleLogout();
 	};
+
 	const handleMultipleLogout = async () => {
 		await multipleLogout();
 	};
+
 	const togglePanel = () => {
 		setPanelOpen(!panelOpen);
 	};
+
 	const handleImageUpload = (event) => {
 		const file = event.target.files[0];
 
@@ -30,6 +36,7 @@ function Navbar() {
 			reader.readAsDataURL(file);
 		}
 	};
+
 	return (
 		<header>
 			<nav className="navbar">
@@ -57,10 +64,10 @@ function Navbar() {
 				<div className="navbar-user-image" onClick={togglePanel}>
 					<Image
 						className="image"
-						src="/stock/doggo.jpg"
-						alt="doggo"
+						src={uploadedImage}
+						alt="user"
 						layout="fill"
-					></Image>
+					/>
 				</div>
 				{panelOpen && (
 					<div className="navbar-panel">
@@ -68,22 +75,32 @@ function Navbar() {
 							<div className="navbar-panel-image">
 								<div className="user-image">
 									<Image
-										src="/stock/doggo.jpg"
-										alt="doggo"
+										src={uploadedImage}
+										alt="user"
 										layout="fill"
 										className="user"
-									></Image>
+									/>
 								</div>
 								<div className="upload-icon">
-									<Image
-										src="/navbar/upload-solid.svg"
-										alt="doggo"
-										layout="fill"
-									></Image>
+									<label htmlFor="image-upload">
+										{/* Your upload icon */}
+										<Image
+											src="/navbar/upload-solid.svg"
+											alt="upload icon"
+											layout="fill"
+										/>
+									</label>
+									<input
+										type="file"
+										id="image-upload"
+										accept="image/*"
+										onChange={handleImageUpload}
+										style={{ display: "none" }}
+									/>
 								</div>
 							</div>
 							<div className="theme-toogle-container">
-								<ThemeToogle></ThemeToogle>
+								<ThemeToogle />
 							</div>
 							<button className="logout-button" onClick={handleLogout}>
 								Logout
