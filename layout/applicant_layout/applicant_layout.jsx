@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Navbar } from "@/containers";
 import { Fragment } from "react";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
+import { handleThemeChange } from "@/hooks/theme";
 function ApplicantLayout({ children }) {
 	const router = useRouter();
 	useEffect(() => {
@@ -12,6 +13,9 @@ function ApplicantLayout({ children }) {
 			router.push("/");
 		}
 	}, [router]);
+	useEffect(() => {
+		handleThemeChange("light");
+	}, []);
 	return (
 		<Fragment>
 			<Navbar></Navbar>
