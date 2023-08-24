@@ -7,7 +7,7 @@ import { ThemeToogle } from "@/components";
 
 function Navbar() {
 	const [panelOpen, setPanelOpen] = useState(false);
-	const [uploadedImage, setUploadedImage] = useState("/stock/doggo.jpg"); // Default image
+	const [uploadedImage, setUploadedImage] = useState("/stock/doggo.jpg");
 	const { singleLogout } = useSingleLogout();
 	const { multipleLogout } = useMultipleLogout();
 
@@ -83,7 +83,6 @@ function Navbar() {
 								</div>
 								<div className="upload-icon">
 									<label htmlFor="image-upload">
-										{/* Your upload icon */}
 										<Image
 											src="/navbar/upload-solid.svg"
 											alt="upload icon"
