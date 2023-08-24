@@ -13,7 +13,6 @@ function useRegistration() {
 	};
 
 	function isEmailValid(email) {
-		// Use a regular expression to validate the email format
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		return emailRegex.test(email);
 	}
@@ -60,8 +59,8 @@ function useRegistration() {
 
 				const responseData = await response.json();
 				console.log(responseData);
-				alert("Account created successfully please verify your email to login");
 				setLoading(false);
+				alert("Account created successfully please verify your email to login");
 			} catch (error) {
 				console.log(error);
 				setLoading(false);
