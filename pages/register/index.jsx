@@ -1,11 +1,12 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import { TypingText } from "@/components";
 import { LandingNavbar } from "@/containers";
 import { LandingLayout } from "@/layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import useRegistration from "@/hooks/registration";
+import getColleges from "@/hooks/getColleges";
 function Register() {
 	const {
 		email,
@@ -17,6 +18,16 @@ function Register() {
 		loading,
 		handleRegistration,
 	} = useRegistration();
+	console.log("selectedCollege:", selectedCollege);
+	const [colleges, setColleges] = useState([]);
+	useEffect(() => {
+		async function fetchColleges() {
+			const collegesData = await getColleges();
+			setColleges(collegesData);
+		}
+
+		fetchColleges();
+	}, []);
 	return (
 		<Fragment>
 			<LandingNavbar></LandingNavbar>
@@ -51,14 +62,15 @@ function Register() {
 								value={selectedCollege}
 								onChange={handleCollegeChange}
 							>
-								<option value="" disabled defaultValue>
+								<option value="" disabled>
 									Please select
 								</option>
-								<option value="IEM Kolkata">IEM Kolkata</option>
-								<option value="UEM Kolkata">UEM Kolkata</option>
-								<option value="UEM Jaipur">UEM Jaipur</option>
+								{colleges.map((college) => (
+									<option key={college.college_id} value={college.college_name}>
+										{college.college_name}
+									</option>
+								))}
 							</select>
-
 							<input
 								placeholder="Email Address"
 								type="email"

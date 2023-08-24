@@ -2,14 +2,14 @@ import { useState } from "react";
 
 function useRegistration() {
 	const [email, setEmail] = useState("");
-	const [selectedCollege, setSelectedCollege] = useState("Please Select");
+	const [selectedCollege, setSelectedCollege] = useState("Please select");
 	const [loading, setLoading] = useState(false);
 	const handleEmailChange = (e) => {
 		setEmail(e.target.value);
 	};
 
-	const handleCollegeChange = (e) => {
-		setSelectedCollege(e.target.value);
+	const handleCollegeChange = (event) => {
+		setSelectedCollege(event.target.value);
 	};
 
 	function isEmailValid(email) {
@@ -26,21 +26,6 @@ function useRegistration() {
 			return;
 		} else {
 			console.log("hitted register api");
-			let collegeId = "";
-			switch (selectedCollege) {
-				case "IEM Kolkata":
-					collegeId = "306";
-					break;
-				case "UEM Kolkata":
-					collegeId = "304";
-					break;
-				case "UEM Jaipur":
-					collegeId = "305";
-					break;
-				default:
-					collegeId = "NULL";
-					break;
-			}
 			console.log(collegeId);
 			console.log(email);
 			console.log(selectedCollege);
