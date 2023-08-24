@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSingleLogout } from "@/hooks/singleLogout";
 import { useMultipleLogout } from "@/hooks/multipleLogout";
 import { ThemeToogle } from "@/components";
@@ -18,7 +17,19 @@ function Navbar() {
 	const togglePanel = () => {
 		setPanelOpen(!panelOpen);
 	};
+	const handleImageUpload = (event) => {
+		const file = event.target.files[0];
 
+		if (file) {
+			const reader = new FileReader();
+
+			reader.onload = (e) => {
+				setUploadedImage(e.target.result);
+			};
+
+			reader.readAsDataURL(file);
+		}
+	};
 	return (
 		<header>
 			<nav className="navbar">
@@ -60,6 +71,12 @@ function Navbar() {
 									alt="doggo"
 									layout="fill"
 									className="image"
+								></Image>
+								<Image
+									src="/navbar/upload-solid.svg"
+									alt="doggo"
+									layout="fill"
+									className="upload-icon"
 								></Image>
 							</div>
 							<div className="theme-toogle-container">
