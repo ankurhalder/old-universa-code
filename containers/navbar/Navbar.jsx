@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSingleLogout } from "@/hooks/singleLogout";
 import { useMultipleLogout } from "@/hooks/multipleLogout";
 import { ThemeToogle } from "@/components";
-
 function Navbar() {
 	const [panelOpen, setPanelOpen] = useState(false);
 	const [uploadedImage, setUploadedImage] = useState("/stock/doggo.jpg");
