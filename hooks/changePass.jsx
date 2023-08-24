@@ -19,7 +19,6 @@ async function initiateChangePass() {
 		console.log(error);
 	}
 }
-//  change the old password to new password
 async function updatePass() {
 	try {
 		const response = await fetch(
