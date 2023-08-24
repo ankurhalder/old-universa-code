@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useSingleLogout } from "@/hooks/singleLogout";
 import { useMultipleLogout } from "@/hooks/multipleLogout";
+import { ThemeToogle } from "@/components";
 function Navbar() {
 	const [panelOpen, setPanelOpen] = useState(false);
 	const { singleLogout } = useSingleLogout();
@@ -61,6 +61,9 @@ function Navbar() {
 									layout="fill"
 									className="image"
 								></Image>
+							</div>
+							<div className="theme-toogle-container">
+								<ThemeToogle></ThemeToogle>
 							</div>
 							<button className="logout-button" onClick={handleLogout}>
 								Logout
