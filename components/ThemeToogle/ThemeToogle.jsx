@@ -3,23 +3,20 @@ import { useEffect } from "react";
 import { handleThemeChange } from "@/hooks/theme";
 
 function ThemeToggle() {
+	const handleCheckboxChange = () => {
+		const checkbox = document.getElementById("darkmode-toggle");
+		const theme = checkbox.checked ? "dark" : "light";
+		handleThemeChange(theme);
+	};
+
 	useEffect(() => {
 		const checkbox = document.getElementById("darkmode-toggle");
+		checkbox.addEventListener("change", handleCheckboxChange);
 
-		checkbox.addEventListener("change", () => {
-			const theme = checkbox.checked ? "dark" : "light";
-			handleThemeChange(theme);
-		});
-
-		// Clean up the event listener when the component unmounts
 		return () => {
-			checkbox.removeEventListener("change", () => {
-				const theme = checkbox.checked ? "dark" : "light";
-				handleThemeChange(theme);
-			});
+			checkbox.removeEventListener("change", handleCheckboxChange);
 		};
 	}, []);
-
 	return (
 		<div className="theme-toggle">
 			<input
