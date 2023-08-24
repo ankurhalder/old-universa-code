@@ -5,18 +5,21 @@ export const setCSSVariable = (value, name, element) => {
 export const handleThemeChange = (theme) => {
 	const root = document.documentElement;
 	if (theme === "light") {
-		// Light Theme
+		root.classList.remove("dark-theme");
+		root.classList.add("light-theme");
 
-		setCSSVariable("hsla(0, 0%, 100%, 1)", `--theme-bg`, root);
-		setCSSVariable("hsla(0, 0%, 98%, 1)", `--theme-panel`, root);
-		setCSSVariable("hsla(0, 0%, 0%, 1)", `--theme-txt`, root);
+		setCSSVariable("hsla(0, 0%, 100%, 1)", "--theme-bg", root);
+		setCSSVariable("hsla(0, 0%, 98%, 1)", "--theme-panel", root);
+		setCSSVariable("hsla(0, 0%, 0%, 1)", "--theme-txt", root);
 		setCSSVariable("hsla(0, 0%, 100%, 1)", "--box-shadow-1", root);
 		setCSSVariable("hsla(240, 4%, 79%, 1)", "--box-shadow-2", root);
 	} else {
-		// Dark Theme
-		setCSSVariable("hsla(210, 18%, 16%, 1)", `--theme-bg`, root);
-		setCSSVariable("hsla(0, 0%, 0%, 0.1)", `--theme-panel`, root);
-		setCSSVariable("hsla(0, 0%, 100%, 1)", `--theme-txt`, root);
+		root.classList.remove("light-theme");
+		root.classList.add("dark-theme");
+
+		setCSSVariable("hsla(210, 18%, 16%, 1)", "--theme-bg", root);
+		setCSSVariable("hsla(0, 0%, 0%, 0.1)", "--theme-panel", root);
+		setCSSVariable("hsla(0, 0%, 100%, 1)", "--theme-txt", root);
 		setCSSVariable("hsla(0, 0%, 0%, 0)", "--box-shadow-1", root);
 		setCSSVariable("hsla(0, 0%, 10%, 0)", "--box-shadow-2", root);
 	}

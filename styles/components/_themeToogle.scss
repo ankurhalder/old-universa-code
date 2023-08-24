@@ -1,5 +1,5 @@
-.theme-toogle {
-	.theme-toogle-label {
+.theme-toggle {
+	.theme-toggle-label {
 		user-select: none;
 		width: 70.3125px;
 		height: 28.125px;
@@ -26,13 +26,13 @@
 		}
 	}
 
-	.toogle-theme-input {
+	.toggle-theme-input {
 		width: 0;
 		height: 0;
 		visibility: hidden;
 	}
 
-	.toogle-theme-input:checked + .theme-toogle-label {
+	.toggle-theme-input:checked + .theme-toggle-label {
 		background: #242424;
 
 		&:after {
@@ -46,7 +46,7 @@
 		}
 	}
 
-	.theme-toogle-label .theme-image {
+	.theme-toggle-label .theme-image {
 		position: absolute;
 		width: 16.875px;
 		top: 4px;
@@ -63,21 +63,21 @@
 		left: 49px;
 	}
 
-	.theme-toogle-label .theme-image .sun {
+	.theme-toggle-label .theme-image .sun {
 		filter: invert(1);
 		transition: 0.3s;
 	}
 
-	.theme-toogle-label .theme-image .moon {
+	.theme-toggle-label .theme-image .moon {
 		filter: invert(0.5);
 		transition: 0.3s;
 	}
 
-	.toogle-theme-input:checked + .theme-toogle-label .theme-image.sun {
+	.toggle-theme-input:checked + .theme-toggle-label .theme-image.sun {
 		filter: invert(0.5);
 	}
 
-	.toogle-theme-input:checked + .theme-toogle-label .theme-image.moon {
+	.toggle-theme-input:checked + .theme-toggle-label .theme-image.moon {
 		filter: invert(1);
 	}
 }

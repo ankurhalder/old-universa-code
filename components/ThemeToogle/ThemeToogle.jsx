@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { handleThemeChange } from "@/hooks/theme";
-function ThemeToogle() {
+
+function ThemeToggle() {
 	useEffect(() => {
 		const checkbox = document.getElementById("darkmode-toggle");
 
@@ -18,14 +19,15 @@ function ThemeToogle() {
 			});
 		};
 	}, []);
+
 	return (
-		<div className="theme-toogle">
+		<div className="theme-toggle">
 			<input
-				className="toogle-theme-input"
+				className="toggle-theme-input"
 				type="checkbox"
 				id="darkmode-toggle"
 			/>
-			<label className="theme-toogle-label" htmlFor="darkmode-toggle">
+			<label className="theme-toggle-label" htmlFor="darkmode-toggle">
 				<div className="sun theme-image">
 					<Image src="/theme/sun.svg" alt="Sun" width={20} height={20} />
 				</div>
@@ -37,4 +39,4 @@ function ThemeToogle() {
 	);
 }
 
-export default ThemeToogle;
+export default ThemeToggle;
