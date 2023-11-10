@@ -1,7 +1,4 @@
-import { Fragment, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { Fragment } from "react";
 import { LandingLayout } from "@/layout";
 import { LandingNavbar } from "@/containers";
 import { TypingText } from "@/components";
@@ -33,9 +30,7 @@ function Homepage() {
 								</span>
 							</h1>
 							<div className="input-icon-container-username">
-								<div className="icon-container">
-									<FontAwesomeIcon icon={faUser} />
-								</div>
+								<div className="icon-container"></div>
 								<input
 									type="text"
 									placeholder="UserId"
@@ -45,9 +40,7 @@ function Homepage() {
 								/>
 							</div>
 							<div className="input-icon-container-password">
-								<div className="icon-container">
-									<FontAwesomeIcon icon={faKey} />
-								</div>
+								<div className="icon-container"></div>
 								<input
 									type="password"
 									placeholder="Password"
@@ -73,12 +66,8 @@ function Homepage() {
 							</div>
 							<div className="social-login">
 								<p>Login with:</p>
-								<span className="facebook">
-									<FontAwesomeIcon icon={faFacebook} />
-								</span>
-								<span className="google">
-									<FontAwesomeIcon icon={faGoogle} />
-								</span>
+								<span className="facebook"></span>
+								<span className="google"></span>
 							</div>
 							<div className="options">
 								<span className="forget-password">Forgot Password?</span>
@@ -96,5 +85,4 @@ function Homepage() {
 		</Fragment>
 	);
 }
-
 export default Homepage;
