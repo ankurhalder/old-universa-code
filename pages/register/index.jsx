@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import { TypingText } from "@/components";
-import { LandingNavbar } from "@/containers";
 import { LandingLayout } from "@/layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +29,6 @@ function Register() {
 	}, []);
 	return (
 		<Fragment>
-			<LandingNavbar></LandingNavbar>
 			<LandingLayout>
 				<div className="homepage">
 					<div className="homepage-left">
@@ -43,7 +41,6 @@ function Register() {
 						</div>
 					</div>
 					<div className="homepage-right">
-						{/* Login box content starts from here*/}
 						<div className="registrationForm">
 							<h2>
 								Your Pathway to Academic Excellence: Register Now on Universa

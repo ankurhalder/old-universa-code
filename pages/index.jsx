@@ -1,15 +1,12 @@
 import { Fragment } from "react";
 import { LandingLayout } from "@/layout";
-import { LandingNavbar } from "@/containers";
 import { TypingText } from "@/components";
 import Link from "next/link";
 import useLogin from "@/hooks/login";
-
 function Homepage() {
 	const { userId, setUserId, password, setPassword, handleLogin } = useLogin();
 	return (
 		<Fragment>
-			<LandingNavbar></LandingNavbar>
 			<LandingLayout>
 				<div className="homepage">
 					<div className="homepage-left">
